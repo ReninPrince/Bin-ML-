@@ -73,39 +73,39 @@ for i in range(len(fp)):
         def rate(fp):
             binbasehgt = int(100)
         ##    houses = input("enter number of houses:")
-            binfilhgt = fp[i]
-            binfil = (int(binfilhgt) / int(binbasehgt)) * 100
-            pbinfill = (str((binfil)) + "%")
-            binfiltime = int(360)
-            binfiltime1 = (binfiltime) / 60
-            timehrs = (str((binfiltime1)) + "hr")
-            rateoffil = (binfil) / (binfiltime1)
-            rfph = (str((rateoffil)) + "cm/hr")
-            binendtim = (float(binbasehgt) / float(rateoffil))
-            binendtim = round(binendtim, 2)
-            binendtim2 = binendtim - binfiltime1
-            binendtim2 = round(binendtim2, 2)
-            if binendtim < 1:
-                binendtim = binendtim * 60
-                fill1 =  (str(int(binendtim))+ " min")
-            elif binendtim > 1:
-                p = binendtim
+            bin_fill_height = fp[i]
+            bin_fill = (int(bin_fill_height) / int(binbasehgt)) * 100
+            pbin_fill = (str((bin_fill)) + "%")
+            bin_fill_time = int(360)
+            bin_fill_time1 = (bin_fill_time) / 60
+            timehrs = (str((bin_fill_time1)) + "hr")
+            rate_of_fill = (bin_fill) / (bin_fill_time1)
+            rfph = (str((rate_of_fill)) + "cm/hr")
+            bin_end_time = (float(binbasehgt) / float(rate_of_fill))
+            bin_end_time = round(bin_end_time, 2)
+            bin_end_time2 = bin_end_time - bin_fill_time1
+            bin_end_time2 = round(bin_end_time2, 2)
+            if bin_end_time < 1:
+                bin_end_time = bin_end_time * 60
+                fill1 =  (str(int(bin_end_time))+ " min")
+            elif bin_end_time > 1:
+                p = bin_end_time
                 k = (str(p).split('.'))
                 j = (int(k[1]) * .60)
                 fill1 = ( str(int(k[0]))+ " hr " + str(int(j)) + " min")
             else:
-                fill1 = ( str(int(binendtim))+ " hr")
+                fill1 = ( str(int(bin_end_time))+ " hr")
                 
-            if binendtim2 < 1:
-                binendtim2 = binendtim2 * 60
-                fill = (str(int(binendtim2))+ " min")    
-            elif binendtim2 > 1:
-                p = binendtim2
+            if bin_end_time2 < 1:
+                bin_end_time2 = bin_end_time2 * 60
+                fill = (str(int(bin_end_time2))+ " min")    
+            elif bin_end_time2 > 1:
+                p = bin_end_time2
                 k = (str(p).split('.'))
                 j = (int(k[1]) * .60)
                 fill = (str(int(k[0]))+ " hr " + str(int(j)) + " min")
             else:
-                fill = (str(int(binendtim2))+ " hr")
+                fill = (str(int(bin_end_time2))+ " hr")
             u = fill
             uv = u.split(' ')
             um = []
@@ -120,7 +120,7 @@ for i in range(len(fp)):
                 desn = 'yes'
             else:
                 desn = 'no'
-            final_data = {"Base height":binbasehgt,"filled percent":pbinfill,"Checking time(hours)":timehrs,
+            final_data = {"Base height":binbasehgt,"filled percent":pbin_fill,"Checking time(hours)":timehrs,
                           "Rate of filling per  hour":rfph,
                           "Calculated time":fill1,"Remaining time to fill":fill,"Call truck":desn}
             final_ar.append(final_data)
