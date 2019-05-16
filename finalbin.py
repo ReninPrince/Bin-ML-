@@ -39,7 +39,7 @@ def machine(X,y):
     global X1,y1
     from sklearn.ensemble import RandomForestRegressor
     regressor = RandomForestRegressor(n_estimators = 500, random_state = 0)
-    regressor.fit(X, y)
+    regressor.fit(X, np.ravel(y))
 
     new_values = []
     new_values1 = []
